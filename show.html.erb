@@ -1,0 +1,11 @@
+<div class="main user-show">
+  <div class="container">
+    <div class="user">
+      <img src="" alt="<%=@user.image_name%>">
+      <h2><%= @user.name %></h2>
+      <p><%= @user.member %></p>
+      <p><%= @user.profile %></p>
+      <%= link_to("編集", "/users/#{@user.id}/edit") %>
+    </div>
+  </div>
+</div>
