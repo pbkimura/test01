@@ -1,0 +1,35 @@
+<div class="main users-edit">
+  <div class="container">
+    <div class="form-heading">奏者情報の編集</div>
+    <div class="form users-form">
+      <div class="form-body">
+        <% @user.errors.full_messages.each do |message| %>
+           <div class="form-error">
+             <%= message %>
+           </div>
+        <% end %>
+
+        <%= form_tag("/users/#{@user.id}/update") do %>
+        <p>プロフィール写真</p>
+        <img name="image_name src="" value="<%= @user.image_name %>" alt="">
+        <p>ユーザー名</p>
+        <input name="name" value="<%= @user.name %>">
+
+        <p>演奏可能エリア</p>
+        <input name="area" value="<%= @user.area %>">
+
+        <p>メールアドレス</p>
+        <input name="email" value="<%= @user.email %>">
+
+        <p>人数</p>
+        <input name="member" value="<%= @user.member %>">
+
+        <p>プロフィール</p>
+        <textarea name="profile" value=""><%= @user.profile %></textarea>
+        <br>
+        <input type="submit" value="保存">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
